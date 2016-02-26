@@ -1,0 +1,37 @@
+package com.dgaotech.dgfw.service;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alibaba.fastjson.JSONObject;
+import com.dgaotech.dgfw.dao.UserDao;
+
+/**
+ * 登录相关服务
+ * @author huangzy
+ */
+@Service
+public class UserService {
+	@Autowired
+	private UserDao userDao;
+	
+	/**
+	 * 查找用戶信息
+	 * @param params
+	 * @return
+	 */
+	public JSONObject findUser(JSONObject params) {
+		return userDao.findUser(params);
+	}
+	
+	/**
+	 * 用戶信息校验
+	 * @param params
+	 * @return
+	 */
+	public boolean validate(JSONObject params) {
+		return true;
+	}
+}

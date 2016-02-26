@@ -1,0 +1,33 @@
+package com.dgaotech.dgfw.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.dgaotech.dgfw.dao.IRechargeDao;
+import com.dgaotech.dgfw.service.RechargeService;
+
+@Service
+public class RechargeServiceImpl implements RechargeService {
+	
+	@Autowired
+	private IRechargeDao rechargeDao;
+	
+	@Override
+	@Transactional
+	@Cacheable(value = "recharge_getall",keyGenerator = "wiselyKeyGenerator")
+	public List getAll(){	
+		return rechargeDao.getAll();
+	}
+
+	@Override
+	@Transactional
+	@Cacheable(value = "recharge_get_by_mobile",keyGenerator = "wiselyKeyGenerator")
+	public List getByMobile(String mobile) {
+		return rechargeDao.getByMobile(mobile);
+	}
+
+}

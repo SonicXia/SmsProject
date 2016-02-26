@@ -1,0 +1,23 @@
+package com.dgaotech.dgfw.dao.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.dgaotech.dgfw.dao.BaseDao;
+import com.dgaotech.dgfw.dao.IRechargeDao;
+
+@Repository
+public class RechargeDaoImpl extends BaseDao implements IRechargeDao{
+
+	@Override
+	public List getAll() {
+		return this.jdbctemplate.queryForList("select * from recharge_info");
+	}
+
+	@Override
+	public List getByMobile(String mobile) {
+		return this.jdbctemplate.queryForList("select * from recharge_info where mobile=?", new Object[]{mobile});
+	}
+
+}

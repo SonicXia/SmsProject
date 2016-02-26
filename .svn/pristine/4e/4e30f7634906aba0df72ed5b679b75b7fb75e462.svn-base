@@ -1,0 +1,49 @@
+package com.dgaotech.dgfw.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.dgaotech.dgfw.dao.ILineDao;
+import com.dgaotech.dgfw.service.LineService;
+
+@Service
+public class LineServiceImpl implements LineService{
+	
+	@Autowired
+	private ILineDao lineDao;
+	
+	@Override
+	@Transactional
+	@Cacheable(value = "list_getall",keyGenerator = "wiselyKeyGenerator")
+	public List getAll(){	
+		return lineDao.getAll();
+	}
+
+	@Override
+	@Cacheable(value = "list_get_by_id",keyGenerator = "wiselyKeyGenerator")
+	public List getById(String id) {
+		return lineDao.getById(id);
+	}
+//	public List getAll();
+//	public List getByid(String id);
+
+	@Override
+	public String s1() {
+		return "hello";
+	}
+
+	@Override
+	public void insert_rollback() throws Exception {
+		lineDao.insert_rollback();;
+	}
+
+	@Override
+	public void insert_success() throws Exception {
+		lineDao.insert_success();
+	}
+	
+}

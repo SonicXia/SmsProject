@@ -1,0 +1,9 @@
+package com.dgaotech.dgfw.dao;
+
+import java.util.List;
+
+public interface IRechargeDao {
+	
+	public List getAll();
+	public List getByMobile(String mobile);
+}

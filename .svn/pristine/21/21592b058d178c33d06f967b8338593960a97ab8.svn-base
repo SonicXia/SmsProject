@@ -1,0 +1,30 @@
+package com.dgaotech.dgfw.dao;
+
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import com.alibaba.fastjson.JSONObject;
+import com.dgaotech.common.PropertiesReader;
+
+/**
+ * 用户Dao
+ * 
+ * @author huangzy
+ */
+@Repository
+public class UserDao extends BaseDao {
+	/**
+	 * 根据登录账户和登录密码查询用户信息
+	 * @param params
+	 * @return
+	 */
+	public JSONObject findUser(JSONObject params) {
+		String findUserSql = PropertiesReader.getSql("UserDao.findUser");
+//		Map<String, Object> resMap = jdbctemplate.queryForMap(findUserSql, params.getString("loginName"), params.getString("loginPwd"));
+//		JSONObject retObj = new JSONObject();
+//		
+//		retObj.putAll(resMap);
+		return params;
+	}
+}

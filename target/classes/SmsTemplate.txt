@@ -1,0 +1,7 @@
+
+尊敬的${customerName}：您已成功支付火车票订单，正在为您努力出票中。稍后将会短信通知您出票结果。
+尊敬的${customerName}：您已成功订购${ticketNum}张车票，${trainInfo}请您持有效证件及时取票、乘车。
+尊敬的${customerName}：您所订购的${trainInfo}出票失败，退款将会在${days}个工作日内按照您原有的付款渠道返回到您的账户上。由此带来的不便我们向您道歉！
+尊敬的${phone}乘客：您已成功订购以下${productNum}件物品：${orderInfo}订单总额：${total}元。餐服员正在处理配送中，如未能及时送达，请主动联系车上餐服员，或拨打${customerPhoneNo}客服专线处理。感谢您的配合！
+${info}有新订单，手机号码：${phone}，送达位置：${seat}，订单总额：${total}元，${orderInfo}请及时处理
+尊敬的${customerName}乘客：您已成功充值人民币${balance}元。您可以使用此充值购买火车票、在车上点餐和购买商品。您在使用过程中如有意见或疑问，请拨打${customerPhoneNo}客服专线进行处理。感谢您的支持！
